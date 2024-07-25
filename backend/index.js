@@ -12,7 +12,12 @@ const db = mysql.createConnection({
 
 //to send data to express from postman body raw
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin:["https://book-store-frontend-alpha-three.vercel.app/"],
+        credentials:true
+    }
+))
 
 app.get("/books", (request, response) => {
     const q = "SELECT * FROM books"
