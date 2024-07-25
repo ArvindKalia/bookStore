@@ -68,6 +68,6 @@ app.put("/books/:id", (request, response) => {
 })
 
 
-app.listen(PORT,'0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log("Connected to Backend!")
 })
