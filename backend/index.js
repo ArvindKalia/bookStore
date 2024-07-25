@@ -16,6 +16,7 @@ app.use(express.json())
 app.use(cors(
     {
         origin:["https://book-store-frontend-alpha-three.vercel.app"],
+        request:["POST","GET","PUT","DELETE"],
         credentials:true
     }
 ))
