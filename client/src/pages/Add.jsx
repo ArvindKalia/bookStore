@@ -19,7 +19,8 @@ const Add = () => {
   const handleClick = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("https://book-store-api-navy-pi.vercel.app/books", book)
+      const res=await axios.post("https://book-store-api-navy-pi.vercel.app/books", book)
+      console.log(res)
       navigate("/")
     } catch (error) {
       console.log(error)

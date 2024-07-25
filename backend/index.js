@@ -2,6 +2,7 @@ import express from "express"
 import mysql from "mysql2"
 import cors from "cors"
 const app = express()
+const PORT= process.env.PORT || 8800
 
 const db = mysql.createConnection({
     host: "localhost",
@@ -13,10 +14,10 @@ const db = mysql.createConnection({
 //to send data to express from postman body raw
 app.use(express.json())
 app.use(cors(
-    {
-        origin:["https://book-store-frontend-alpha-three.vercel.app/"],
-        credentials:true
-    }
+    // {
+    //     origin:["https://book-store-frontend-alpha-three.vercel.app/"],
+    //     credentials:true
+    // }
 ))
 
 app.get("/books", (request, response) => {
@@ -41,7 +42,7 @@ app.post("/books", (request, response) => {
         request.body.cover,
     ]
     db.query(q, [values], (err, data) => {
-        if (err) return response.json(err)
+        if (err) return response.json("error")
         return response.json("Successfully created")
     })
 })
@@ -72,6 +73,6 @@ app.put("/books/:id", (request, response) => {
 })
 
 
-app.listen(8800, () => {
+app.listen(PORT,'0.0.0.0', () => {
     console.log("Connected to Backend!")
 })

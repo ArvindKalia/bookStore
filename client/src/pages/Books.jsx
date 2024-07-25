@@ -13,6 +13,7 @@ const Books = () => {
         const fetchAllBooks=async ()=>{
             try{
             const res= await axios.get("https://book-store-api-navy-pi.vercel.app/books")
+            console.log(res.data)
             // console.log(res)
             setbooks(res.data)
             }catch(error){
@@ -24,7 +25,7 @@ const Books = () => {
     const handleDelete=async(id)=>{
         console.log(id)
         try{
-            await axios.delete("https://book-store-api-navy-pi.vercel.app/books/"+id)
+            await axios.delete("https://book-store-api-navy-pi.vercel.app/"+id)
             window.location.reload()
         }catch(error){
             console.log(error)
