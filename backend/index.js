@@ -15,7 +15,7 @@ const db = mysql.createConnection({
 app.use(express.json())
 app.use(cors(
     {
-        origin:["https://book-store-frontend-alpha-three.vercel.app/"],
+        origin:["https://book-store-frontend-alpha-three.vercel.app"],
         credentials:true
     }
 ))
