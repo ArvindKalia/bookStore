@@ -22,7 +22,7 @@ const Update = () => {
   const handleClick = async (e) => {
     e.preventDefault()
     try {
-      await axios.put("http://localhost:8800/books/"+bookId, book)
+      await axios.put("https://book-store-api-navy-pi.vercel.app/"+bookId, book)
       navigate("/")
     } catch (error) {
       console.log(error)

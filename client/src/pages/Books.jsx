@@ -12,7 +12,7 @@ const Books = () => {
     useEffect(()=>{
         const fetchAllBooks=async ()=>{
             try{
-            const res= await axios.get("http://localhost:8800/books")
+            const res= await axios.get("https://book-store-api-navy-pi.vercel.app/books")
             // console.log(res)
             setbooks(res.data)
             }catch(error){
@@ -24,7 +24,7 @@ const Books = () => {
     const handleDelete=async(id)=>{
         console.log(id)
         try{
-            await axios.delete("http://localhost:8800/books/"+id)
+            await axios.delete("https://book-store-api-navy-pi.vercel.app/books/"+id)
             window.location.reload()
         }catch(error){
             console.log(error)
